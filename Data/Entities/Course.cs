@@ -5,14 +5,11 @@ using System.Threading.Tasks;
 
 namespace dreambot.Data.Entities
 {
-    public class Student
+    public class Course
     {
         public int id { get; set; }
-        public int whatsapp { get; set; }
         public string name { get; set; }
-        public int currentCourse { get; set; }
-        public string status { get; set; }
-        public virtual IList<Conversation> conversations { get; set; }
+        public string contents { get; set; }
 
     }
 }

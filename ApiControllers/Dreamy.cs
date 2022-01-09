@@ -14,7 +14,14 @@ namespace dreambot.ApiControllers
         [HttpPost]
         public JsonResult Post([FromBody] checkStudent student)
         {
-            return null;
+            var res = checkStudentRegistered(student);
+            return new JsonResult(res);
+        }
+
+        private object checkStudentRegistered(checkStudent student)
+        {
+
+            return new { status = "found", name = "" };
         }
     }
 }

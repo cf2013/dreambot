@@ -877,6 +877,15 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "OpenAI-DotNet/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/OpenAI-DotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenAI-DotNet.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -3967,6 +3976,18 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "OpenAI-DotNet/3.0.0": {
+      "sha512": "LuH6G+3/xYVFelvqtRm6CS7nxV3cPJP1YF6AXtiB8nD4bym1P1WSofdT8W3AZpj1RoNP7Ht1eR3k04T/a9UwtQ==",
+      "type": "package",
+      "path": "openai-dotnet/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/OpenAI-DotNet.dll",
+        "openai-dotnet.3.0.0.nupkg.sha512",
+        "openai-dotnet.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -8372,7 +8393,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
       "Microsoft.Extensions.Configuration >= 3.1.3",
       "Microsoft.Extensions.Configuration.UserSecrets >= 3.1.3",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
+      "OpenAI-DotNet >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -8442,6 +8464,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.3, )"
+          },
+          "OpenAI-DotNet": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [
