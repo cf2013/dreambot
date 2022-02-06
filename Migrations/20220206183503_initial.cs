@@ -2,7 +2,7 @@
 
 namespace dreambot.Migrations
 {
-    public partial class enforcename : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

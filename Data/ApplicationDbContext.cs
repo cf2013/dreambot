@@ -15,10 +15,16 @@ namespace dreambot.Data
         { }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             StudentEntityConfiguration.Configure(modelBuilder);
+            CourseEntityConfiguration.Configure(modelBuilder);
+            ConversationEntityConfiguration.Configure(modelBuilder);
+            TeacherEntityConfiguration.Configure(modelBuilder);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace dreambot.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("contents")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("date")
@@ -39,6 +40,7 @@ namespace dreambot.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("studentId")
@@ -59,7 +61,27 @@ namespace dreambot.Migrations
 
                     b.HasIndex("teacherId");
 
-                    b.ToTable("Conversation");
+                    b.ToTable("Conversations");
+                });
+
+            modelBuilder.Entity("dreambot.Data.Entities.Course", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("contents")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("dreambot.Data.Entities.Student", b =>
@@ -84,7 +106,7 @@ namespace dreambot.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Student");
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("dreambot.Data.Entities.Teacher", b =>
@@ -95,14 +117,16 @@ namespace dreambot.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("whatsapp")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
-                    b.ToTable("Teacher");
+                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("dreambot.Data.Entities.Conversation", b =>
