@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace CloudCityCakeCo.Models.Enums
+namespace dreambot.Models.Enums
 {
     public enum ServiceResponseStatus
     {

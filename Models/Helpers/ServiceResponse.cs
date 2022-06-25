@@ -1,6 +1,6 @@
-﻿using CloudCityCakeCo.Models.Enums;
+﻿using dreambot.Models.Enums;
 
-namespace CloudCityCakeCo.Models.Helpers
+namespace dreambot.Models.Helpers
 {
     public class ServiceResponse<T> : ServiceResponse
     {
