@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace dreambot.Data.Repositories
 {
-    public interface IStudentRepository
+    public interface IConversationThreadRepository
     {
-        Task<Student> GetStudentByPhoneNumberAsync(string phoneNumber);
-        Task<Student> AddNewStudentAsync(Student student);
+        Task<ConversationThread> GetConversationThread(int id);
+        Task<bool> AddConversationThread(ConversationThread item);
     }
 }

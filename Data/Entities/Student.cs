@@ -8,7 +8,7 @@ namespace dreambot.Data.Entities
     public class Student
     {
         public int id { get; set; }
-        public int whatsapp { get; set; }
+        public string whatsapp { get; set; }
         public string name { get; set; }
         public int currentCourse { get; set; }
         public string status { get; set; }

@@ -18,6 +18,7 @@ namespace dreambot.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<ConversationThread> ConversationThreads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
