@@ -52,7 +52,7 @@ namespace dreambot.ApiControllers
             }
             else
             {
-                return "Welcome back " + user.name;
+                return "welcome back " + user.name;
             }
         }
 

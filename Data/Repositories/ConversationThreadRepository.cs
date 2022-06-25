@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace dreambot.Data.Repositories
 {
-    public class ConversationThreadRepository
+    public class ConversationThreadRepository:IConversationThreadRepository
     {
         private readonly ApplicationDbContext _context;
+
+        public ConversationThreadRepository(ApplicationDbContext context)
+        {
+            this._context = context;
+        }
+
         public async Task<ConversationThread> GetConversationThread(int id)
         {
             return await _context
