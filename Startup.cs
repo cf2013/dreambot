@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dreambot.Data;
+using dreambot.Data.Repositories;
 using dreambot.Models.Configuration;
+using dreambot.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,14 @@ namespace dreambot
             //ApplicationDbContext is a class under data directory. we are doing dependency injection here.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultSql")));
+
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IConversationThreadRepository, ConversationThreadRepository>();
+
+            services.AddScoped<IStudentConversationService, StudentConversationService>();
+
+            services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
