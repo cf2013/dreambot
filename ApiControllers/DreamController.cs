@@ -13,17 +13,17 @@ namespace dreambot.ApiControllers
     [Route(template:"api/order")]
     public class DreamController : ControllerBase
     {
-        private readonly IStudentConversationService _conversationService;
-        public DreamController(IStudentConversationService conversationService)
+        private readonly IStudentService _studentService;
+        public DreamController(IStudentService studentService)
         {
-            this._conversationService = conversationService;
+            this._studentService = studentService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CheckStudent student)
+        public async Task<IActionResult> Post([FromBody] CheckStudentRequest student)
         {
-            var conversationServiceResponse = await _conversationService.AddNewStudentAsync(student);
-            return new JsonResult(conversationServiceResponse.Content.Name);
+            var twilioServiceResponse = await _studentService.ProcessStudentRequestAsync(student);
+            return new JsonResult(twilioServiceResponse.Message);
         }
     }
 }

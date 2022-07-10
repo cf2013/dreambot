@@ -21,12 +21,14 @@ namespace dreambot.Models.viewModels
             Status = student.status;
             Conversations = student.conversations;
         }
-
+        public bool requestOk { get; set; } = true;
         public int Id { get; set; }
         public string Whatsapp { get; set; }
         public string Name { get; set; }
         public int CurrentCourse { get; set; }
         public string Status { get; set; }
         public IList<Conversation> Conversations { get; set; }
+
+        public string Info { get; set; }
     }
 }

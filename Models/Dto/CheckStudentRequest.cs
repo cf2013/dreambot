@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace dreambot.Models.Dto
 {
-    public class CheckStudent
+    public class CheckStudentRequest
     {
         public string number { get; set; }
         public string option { get; set; }

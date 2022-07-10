@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace dreambot.Services
 {
-    public interface IStudentConversationService
+    public interface IStudentService
     {
-        Task<ServiceResponse<StudentViewModel>> AddNewStudentAsync(CheckStudent student);
+        Task<ServiceResponse<StudentViewModel>> ProcessStudentRequestAsync(CheckStudentRequest student);
     }
 }

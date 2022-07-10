@@ -39,7 +39,7 @@ namespace dreambot
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IConversationThreadRepository, ConversationThreadRepository>();
 
-            services.AddScoped<IStudentConversationService, StudentConversationService>();
+            services.AddScoped<IStudentService, StudentService>();
 
             services.AddControllersWithViews();
 
