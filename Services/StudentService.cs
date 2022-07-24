@@ -57,13 +57,16 @@ namespace dreambot.Services
             {
                 var student = new Student();
                 student = await GetStudent(requestNumber);
+                studentViewModel = new StudentViewModel(student);
 
-                if (student != null)
+                if (!string.IsNullOrEmpty(studentViewModel.Name))
                 {
-                    studentViewModel = new StudentViewModel(student);
-                    //TODO
                     startChatBotLoop(studentViewModel);
                     studentViewModel.Info = "Thanks for using Dream English products";
+                }
+                else 
+                {
+                    studentViewModel.Info = "User not found please register first!";
                 }
             }
 
